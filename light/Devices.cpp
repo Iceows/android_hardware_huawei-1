@@ -59,6 +59,11 @@ static const std::string kButtonLedDevices[] = {
         "button-backlight2",
 };
 
+static const std::string kKeyboardLedDevices[] = {
+        "keyboard-backlight",
+        "keyboard-backlight-ap",
+};
+
 static std::vector<LedDevice> getButtonLedDevices() {
     std::vector<LedDevice> devices;
 
@@ -66,6 +71,14 @@ static std::vector<LedDevice> getButtonLedDevices() {
         LedDevice button(device);
         if (button.exists()) {
             LOG(INFO) << "Found button LED device: " << button.getName();
+            devices.emplace_back(button);
+        }
+    }
+
+    for (const auto& device : kKeyboardLedDevices) {
+        LedDevice button(device);
+        if (button.exists()) {
+            LOG(INFO) << "Found keyboard LED device: " << button.getName();
             devices.emplace_back(button);
         }
     }
