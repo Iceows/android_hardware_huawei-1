@@ -128,3 +128,21 @@ int imonitor_send_event(struct imonitor_eventobj* eventobj) {
     ALOGV("%s: eventobj: %p", __func__, eventobj);
     return 0;
 }
+
+// return always -2 = FAILED
+int zrhung_get_config(short param_1,long param_2,uint param_3) {
+    ALOGV("%s: param1: %d param2: %ld param3: %d", __func__, param_1, param_2, param_3);
+    return -2;
+}
+
+uint zrhung_is_id_valid(short param_1)
+{
+  ALOGV("%s: param1: %d", __func__, param_1);
+  return 0xffffffea;
+}
+
+int zrhung_send_event(int param_1,char *param_2,char *param_3)
+{
+    ALOGV("%s: param1: %d param2: %s param3: %s", __func__, param_1, param_2, param_3);
+    return 0;
+}
