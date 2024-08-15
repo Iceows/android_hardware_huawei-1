@@ -5,7 +5,6 @@ hidl_interface {
     root: "vendor.huawei",
     system_ext_specific: true,
     srcs: [
-        "types.hal",
         "ISecureBiometricsFaceRecognize.hal",
     ],
     interfaces: [
